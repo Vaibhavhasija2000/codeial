@@ -15,9 +15,9 @@
             <small>
                 <!-- display the likes of the post, if user is logged in, then show the links to the toggle likes, else just show the count-->
                 <% if(locals.user){ %>
-                    <a href = "/likes/toggle/?id=<%=comment._id%>&type=Comment" class="toggle-like-button" data-likes = "<%= comment.likes.length %>"><%= comment.likes.length %> Likes</a>
+                    <%= comment.likes.length %>  <a href = "/likes/toggle/?id=<%=comment._id%>&type=Comment" class="toggle-like-button" data-likes = "<%= comment.likes.length %>"> Like</a>
                 <% }else{ %>
-                    <%= comment.likes.length %> Likes
+                    <%= comment.likes.length %> Like
                 <% } %>
             </small>
     </p>
