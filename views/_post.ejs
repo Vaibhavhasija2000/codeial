@@ -1,15 +1,17 @@
-<div class="card">
-   
-    <div class="card-header border-0 pb-0">
+<div style = "margin-bottom: 50px;">
 
-       <div class="d-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center">
-           
-            <%= post.user.name %>
-
-        </div>
+    <div class="card" >
         
-        <div class="dropdown">
+        <div class="card-header border-0 pb-0">
+            
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    
+                    <%= post.user.name %>
+                    
+                </div>
+                
+                <div class="dropdown">
             <a href="#" class="text-secondary btn btn-secondary-soft-hover py-1 px-2" id="cardFeedAction" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-three-dots">
                     ...
@@ -28,19 +30,19 @@
         </div>
     </div>
 </div>
+
+<div  class = "card-body" id = "post-<%= post._id %>" style = " margin-bottom:10px">
+    <p >
+        <% if(locals.user && locals.user.id == post.user.id) { %>
             
-            <div  class = "container mb-2" id = "post-<%= post._id %>" style = " margin-bottom:10px">
-                <p >
-                    <% if(locals.user && locals.user.id == post.user.id) { %>
-                        
-                        <!-- <small>
-                            <a class = "delete-post-button" href = "/posts/destroy/<%= post.id %>">X</a>
-                        </small> -->
-                        
-                        <% } %>
-                        <%= post.content %>
-                <br>
-                <!-- <small>
+            <!-- <small>
+                <a class = "delete-post-button" href = "/posts/destroy/<%= post.id %>">X</a>
+            </small> -->
+            
+            <% } %>
+            <%= post.content %>
+            <br>
+            <!-- <small>
                     <%= post.user.name %>
                 </small> -->
                 <br>
@@ -75,5 +77,6 @@
                             </div>
                         </li>
                    
-            </div> 
-        
+                    </div> 
+                    
+                </div>
